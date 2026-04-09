@@ -1,0 +1,17 @@
+[
+  {
+    "step": 1,
+    "action": "UPLOAD_CONTEXT_DATA",
+    "description": "The user will upload long-form audio (.mp3, .wav) or a text transcript. This is the raw material for the Life Story."
+  },
+  {
+    "step": 2,
+    "task": "Perform the 'Initial Weaver' Analysis",
+    "prompt": "You are processing a new narrative thread for the 'Legacy-Loom.' Analyze the uploaded media (audio and/or text). Perform the following four tasks in a recursive loop:\n\n1. **TRANSCRIBE (if audio):** Provide a clean transcription, but retain original phrasing and local dialect.\n2. **CHRONOLOGICAL ANCHORING:** Create a timeline of the major life events discussed. Map these against the historical enrichment data you found using GOOGLE SEARCH.\n3. **ENTITY GRAPHING:** Identify and link `[PersonNode]`, `[LocationNode]`, and `[WisdomNode]` (life lessons/values).\n4. **GOLDEN THREAD DETECTION:** List the top 3 recurring themes or values that define this storyteller's philosophy."
+  },
+  {
+    "step": 3,
+    "output_format": "Wisdom Schema (Markdown Version)",
+    "template": "## Legacy-Loom: Narrative Thread Report\n\n### 1. The Anchored Timeline\n| Estimated Date | Lifecycle Stage | Major Life Event | Historical Context Enrichment (via Google Search) |\n| :--- | :--- | :--- | :--- |\n| [e.g., 1968] | [e.g., Early Adulthood] | [e.g., Moved to Bengaluru] | [Google Search Result: Bengaluru Population/Tech Status in 1968] |\n\n### 2. The Wisdom Graph (Linked Entities)\n* **[[PersonNode: Grandma Vani]]** is linked to **[[LocationNode: Malleswaram]]** via relationship `lived_in` (1960-2024).\n* **[[WisdomNode: 'Resilience through community']]** is linked to **[[EventNode: The Great Flood]]** via relationship `learned_from`.\n\n### 3. Golden Threads (Recurring Themes)\n* Thread 1: [Theme Title, e.g., 'The Sacredness of Shared Meals']\n* Thread 2: [Theme Title]\n* Thread 3: [Theme Title]\n\n### 4. Raw Transcript (Sample for Verification)\n> [First 30 seconds of the transcription]"
+  }
+]

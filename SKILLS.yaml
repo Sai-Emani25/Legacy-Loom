@@ -1,0 +1,35 @@
+version: "1.0"
+name: "Legacy-Loom-SkillFlow"
+description: "Deterministic orchestration for oral history preservation"
+
+skills:
+  - id: "transcribe"
+    name: "Clean Transcription"
+    description: "Converts audio to text while retaining local dialect"
+    input: "audio_stream"
+    output: "text_transcript"
+
+  - id: "anchor"
+    name: "Chronological Anchoring"
+    description: "Maps events to historical timelines using Google Search"
+    input: "text_transcript"
+    output: "anchored_timeline"
+    tools: ["googleSearch"]
+
+  - id: "graph"
+    name: "Entity Graphing"
+    description: "Extracts and links Person, Location, and Wisdom nodes"
+    input: "text_transcript"
+    output: "wisdom_graph"
+
+  - id: "detect"
+    name: "Golden Thread Detection"
+    description: "Identifies recurring values and philosophies"
+    input: "wisdom_graph"
+    output: "golden_threads"
+
+compliance:
+  - regulation: "GDPR"
+    mapping: "PII Scrubbing on Export"
+  - regulation: "Ethical AI"
+    mapping: "Dignity-First Prompting"
